@@ -1,0 +1,50 @@
+﻿body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+md-select {
+    display: inline-block;
+    margin-top: 14px;
+    width: 100%;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.license-key {
+    padding: 0;
+}
+
+.serial-key {
+    padding: 30px 0 20px 0;
+    min-height: 50px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.form-container {
+    margin: 20px;
+}
+
+.form-buttons {
+    display: inline-flex;
+    float: right;
+    padding-bottom: 20px;
+}
+
+.form-button {
+    margin-right: 10px;
+}
+
+.validation-success {
+    color: green;
+}
+
+.validation-error {
+    color: red;
+}

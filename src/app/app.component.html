@@ -1,0 +1,144 @@
+﻿<md-toolbar color="primary">
+    <span>Babel Licensing</span>
+    <button md-icon-button [md-menu-trigger-for]="menu">
+        <md-icon>more_vert</md-icon>
+    </button>
+</md-toolbar>
+<md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item (click)="onDownload()">
+        <md-icon>home</md-icon>
+        <span>Download Babel</span>
+    </button>
+    <button md-menu-item (click)="onHelp()">
+        <md-icon>help</md-icon>
+        <span>Online Help</span>
+    </button>
+</md-menu>
+<md-tab-group [selectedIndex]="selectedTab">
+    <md-tab layout="column" layout-fill label="License Manager">
+        <form #licenseForm="ngForm" name="licenseForm" class="form-container">
+            <table class="full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-input-container class="full-width">
+                            <input mdInput placeholder="License Id" required name="licenseId" [(ngModel)]="license.id">
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="full-width">
+                            <input mdInput placeholder="License Type" name="licenseType" [(ngModel)]="license.type" />
+                        </md-input-container>
+                    </td>
+                </tr>
+            </table>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Licensee Name" name="licenseeName" [(ngModel)]="license.licensee" />
+            </md-input-container>
+            <table class="full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-input-container class="full-width">
+                            <input mdInput placeholder="Licensed Product" name="product" [(ngModel)]="license.product" />
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="full-width">
+                            <input mdInput placeholder="Version" name="version" [(ngModel)]="license.version" />
+                        </md-input-container>
+                    </td>
+                </tr>
+            </table>
+            <table class="full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-input-container class="full-width">
+                            <input mdInput [mdDatepicker]="picker1" placeholder="Expire Date" name="expireDate" [(ngModel)]="expireDate">
+                            <button mdSuffix [mdDatepickerToggle]="picker1"></button>
+                        </md-input-container>
+                        <md-datepicker #picker1></md-datepicker>
+                    </td>
+                    <td>
+                        <md-input-container class="full-width">
+                            <input mdInput [mdDatepicker]="picker2" placeholder="Support Expire Date" name="supportExpireDate" [(ngModel)]="supportExpireDate">
+                            <button mdSuffix [mdDatepickerToggle]="picker2"></button>
+                        </md-input-container>
+                        <md-datepicker #picker2></md-datepicker>
+                    </td>
+                </tr>
+            </table>
+            <table class="full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-select placeholder="License Signature" [(ngModel)]="selectedSignature" name="signature">
+                            <md-option *ngFor="let sign of signatures" [value]="sign.value">
+                                {{sign.viewValue}}
+                            </md-option>
+                        </md-select>
+                    </td>
+                    <td>
+                        <md-select placeholder="License Format" [(ngModel)]="selectedFormat" name="format">
+                            <md-option *ngFor="let format of formats" [value]="format.value">
+                                {{format.viewValue}}
+                            </md-option>
+                        </md-select>
+                    </td>
+                </tr>
+            </table>
+            <div flex class="license-key">
+                <pre><code #code highlight class="XML">{{license.licenseKey}}</code></pre>
+            </div>
+            <div class="form-buttons" flex>
+                <button class="form-button" md-raised-button (click)="onCreateLicense()" [disabled]="!licenseForm.valid">Create License</button>
+                <div class="tooltip-host" mdTooltip="{{licenseValidationError}}" mdTooltipPosition="above">
+                    <button class="form-button" md-raised-button (click)="onValidateLicense()" [disabled]="!license.licenseKey">
+                        <md-icon *ngIf="licenseValidated && !licenseValidationError" class="validation-success">check</md-icon>
+                        <md-icon *ngIf="licenseValidated && licenseValidationError" class="validation-error">error</md-icon>
+                        Validate License
+                    </button>
+                </div>
+            </div>
+        </form>
+    </md-tab>
+    <md-tab label="Serial Manager">
+        <form #serialForm="ngForm" name="serialForm" class="form-container">
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Serial Id" required name="serialId" [(ngModel)]="license.id">
+            </md-input-container>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Serial Information" name="serialInfo" [(ngModel)]="license.type" />
+            </md-input-container>
+            <table class="full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-input-container class="full-width">
+                            <input mdInput [mdDatepicker]="picker3" placeholder="Expire Date" name="expireDate" [(ngModel)]="expireDate">
+                            <button mdSuffix [mdDatepickerToggle]="picker3"></button>
+                        </md-input-container>
+                        <md-datepicker #picker3></md-datepicker>
+                    </td>
+                    <td>
+                        <md-input-container class="full-width">
+                            <input mdInput type="number" placeholder="Expire Days" name="expireDays" min="0" step="1" [(ngModel)]="license.expireDays">
+                        </md-input-container>
+                    </td>
+                </tr>
+            </table>
+            <md-input-container class="full-width">
+                <input mdInput readonly placeholder="Public Key" name="publicKey" [(ngModel)]="license.publicKey">
+            </md-input-container>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Serial" name="serialKey" [(ngModel)]="license.serialKey">
+            </md-input-container>
+            <div class="form-buttons" flex>
+                <button class="form-button" md-raised-button (click)="onCreateSerial()" [disabled]="!serialForm.valid">Create Serial</button>
+                <div class="tooltip-host" mdTooltip="{{serialValidationError}}" mdTooltipPosition="above">
+                    <button class="form-button" md-raised-button (click)="onValidateSerial()" [disabled]="!license.serialKey">
+                        <md-icon *ngIf="serialValidated && !serialValidationError" class="validation-success">check</md-icon>
+                        <md-icon *ngIf="serialValidated && serialValidationError" class="validation-error">error</md-icon>
+                        Validate Serial
+                    </button>
+                </div>
+            </div>
+        </form>
+    </md-tab>
+</md-tab-group>

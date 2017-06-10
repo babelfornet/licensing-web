@@ -1,0 +1,361 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+	<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+	<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+	<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+	<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+	<GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+	<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+	<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+	<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+	<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+	<AssemblyName>Babel.Licensing</AssemblyName>	
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\bin\Release\References\Framework\</OutputPath>
+    <DocumentationFile>..\..\bin\Release\References\Framework\netcoreapp1.1\Babel.Licensing.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Demo|AnyCPU'">
+    <OutputPath>..\..\bin\Demo\References\Framework\</OutputPath>
+    <DocumentationFile>..\..\bin\Demo\References\Framework\netcoreapp1.1\Babel.Licensing.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\bin\Debug\References\Framework\</OutputPath>
+    <DocumentationFile>..\..\bin\Debug\References\Framework\netcoreapp1.1\Babel.Licensing.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="Babel.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Babel.Licensing\BabelLicense.cs">
+      <Link>BabelLicense.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\BabelLicenseContext.cs">
+      <Link>BabelLicenseContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\BabelLicenseException.cs">
+      <Link>BabelLicenseException.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\BabelLicenseManager.cs">
+      <Link>BabelLicenseManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\BabelLicenseProvider.cs">
+      <Link>BabelLicenseProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\CreateCustomRestrictionEventArgs.cs">
+      <Link>CreateCustomRestrictionEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\CreateCustomSignatureProviderEventArgs.cs">
+      <Link>CreateCustomSignatureProviderEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Crypto\ECDsaParameters.cs">
+      <Link>Crypto\ECDsaParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\crypto\ECDsaSignature.cs">
+      <Link>Crypto\ECDsaSignature.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\crypto\ECDsaValidator.cs">
+      <Link>Crypto\ECDsaValidator.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\crypto\ECManager.cs">
+      <Link>Crypto\ECManager.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\crypto\FixedSecureRandom.cs">
+      <Link>Crypto\FixedSecureRandom.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Crypto\RSASignature.cs">
+      <Link>Crypto\RSASignature.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Encoding\HexEncoding.cs">
+      <Link>Encoding\HexEncoding.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Engines\ResultCodes.cs">
+      <Link>Engines\ResultCodes.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Feature.cs">
+      <Link>Feature.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Field.cs">
+      <Link>Field.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\HardwareId.cs">
+      <Link>HardwareId.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\ICreateCustomRestriction.cs">
+      <Link>ICreateCustomRestriction.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\IdGenerator.cs">
+      <Link>IdGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\IEnvironmentInformation.cs">
+      <Link>IEnvironmentInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\ILicense.cs">
+      <Link>ILicense.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\ILicenseBuilder.cs">
+      <Link>ILicenseBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\ILicenseContext.cs">
+      <Link>ILicenseContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\ILicenseParser.cs">
+      <Link>ILicenseParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\ILicenseProvider.cs">
+      <Link>ILicenseProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\INetworkInformation.cs">
+      <Link>INetworkInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\IReadableLicenseString.cs">
+      <Link>IReadableLicenseString.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\IRestrictionFactory.cs">
+      <Link>IRestrictionFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\ISignatureProvider.cs">
+      <Link>ISignatureProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\ISignatureWriter.cs">
+      <Link>ISignatureWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\ISystemInformation.cs">
+      <Link>ISystemInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\KeyHelpers.cs">
+      <Link>KeyHelpers.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Licenseable.cs">
+      <Link>Licenseable.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Licensee.cs">
+      <Link>Licensee.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\LicenseRestrictionProvider.cs">
+      <Link>LicenseRestrictionProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\LicenseRestrictionProviderAttribute.cs">
+      <Link>LicenseRestrictionProviderAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\LicenseServices.cs">
+      <Link>LicenseServices.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\LicenseStatus.cs">
+      <Link>LicenseStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\LicenseValidationResult.cs">
+      <Link>LicenseValidationResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Pem\AsymmetricKeyPemGenerator.cs">
+      <Link>Pem\AsymmetricKeyPemGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Pem\AsymmetricKeyPemReader.cs">
+      <Link>Pem\AsymmetricKeyPemReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Pem\PemFile.cs">
+      <Link>Pem\PemFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Product.cs">
+      <Link>Product.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Restriction.cs">
+      <Link>Restriction.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\RestrictionFactory.cs">
+      <Link>RestrictionFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\restrictions\BetaRestriction.cs">
+      <Link>Restrictions\BetaRestriction.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\restrictions\DomainRestriction.cs">
+      <Link>Restrictions\DomainRestriction.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\restrictions\HardwareRestriction.cs">
+      <Link>Restrictions\HardwareRestriction.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\restrictions\TrialRestriction.cs">
+      <Link>Restrictions\TrialRestriction.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\restrictions\UsageRestriction.cs">
+      <Link>Restrictions\UsageRestriction.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\StringEncrypter.cs">
+      <Link>StringEncrypter.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\stringlicense\SerialBuilder.cs">
+      <Link>StringLicense\SerialBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\stringlicense\SerialManager.cs">
+      <Link>StringLicense\SerialManager.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\stringlicense\StringLicense.cs">
+      <Link>StringLicense\StringLicense.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\stringlicense\StringLicenseBuilder.cs">
+      <Link>StringLicense\StringLicenseBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\StringLicense\StringLicenseBuilderProvider.cs">
+      <Link>StringLicense\StringLicenseBuilderProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\StringLicense\StringLicenseManager.cs">
+      <Link>StringLicense\StringLicenseManager.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\stringlicense\StringLicenseReader.cs">
+      <Link>StringLicense\StringLicenseReader.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\stringlicense\StringLicenseWriter.cs">
+      <Link>StringLicense\StringLicenseWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Support\AssemblyHash.cs">
+      <Link>Support\AssemblyHash.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Support\AssemblyHashAlgorithm.cs">
+      <Link>Support\AssemblyHashAlgorithm.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Support\DeepClone.cs">
+      <Link>Support\DeepClone.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Support\PublicKey.cs">
+      <Link>Support\PublicKey.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Support\PublicKeyBase.cs">
+      <Link>Support\PublicKeyBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Support\PublicKeyToken.cs">
+      <Link>Support\PublicKeyToken.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Support\StrongNameKeys.cs">
+      <Link>Support\StrongNameKeys.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Engines\LicenseEngine.cs">
+      <Link>Engines\LicenseEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Engines\StringLicenseEngine.cs">
+      <Link>Engines\StringLicenseEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Compression\Huffman.cs">
+      <Link>Compression\Huffman.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Compression\LZW.cs">
+      <Link>Compression\LZW.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Compression\RLE.cs">
+      <Link>Compression\RLE.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Encoding\Ascii85.cs">
+      <Link>Encoding\Ascii85.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Encoding\Base32.cs">
+      <Link>Encoding\Base32.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Encoding\BaseConverter.cs">
+      <Link>Encoding\BaseConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Encoding\IEncoding.cs">
+      <Link>Encoding\IEncoding.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Engines\XmlLicenseEngine.cs">
+      <Link>Engines\XmlLicenseEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Engines\XmlLicenseRestrictionManager.cs">
+      <Link>Engines\XmlLicenseRestrictionManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Hash\Murmur3.cs">
+      <Link>Hash\Murmur3.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\IO\BitReader.cs">
+      <Link>IO\BitReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\IO\BitWriter.cs">
+      <Link>IO\BitWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\support\AssemblyFullName.cs">
+      <Link>Support\AssemblyFullName.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\support\AssemblyQualifiedTypeName.cs">
+      <Link>Support\AssemblyQualifiedTypeName.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Support\BCEngine.cs">
+      <Link>Support\BCEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\support\CryptoRandom.cs">
+      <Link>Support\CryptoRandom.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\support\HardwareKey.cs">
+      <Link>Support\HardwareKey.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\support\HardwareKeyValidator.cs">
+      <Link>Support\HardwareKeyValidator.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\support\LicensedVersion.cs">
+      <Link>Support\LicensedVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\support\RestrictionCollection.cs">
+      <Link>Support\RestrictionCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\support\RS.cs">
+      <Link>Support\RS.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Support\Utils.cs">
+      <Link>Support\Utils.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\Support\Wildcard.cs">
+      <Link>Support\Wildcard.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\xmllicense\XmlBetaRestriction.cs">
+      <Link>XmlLicense\XmlBetaRestriction.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\xmllicense\XmlDomainRestriction.cs">
+      <Link>XmlLicense\XmlDomainRestriction.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\xmllicense\XmlHardwareRestriction.cs">
+      <Link>XmlLicense\XmlHardwareRestriction.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\xmllicense\XmlLicense.cs">
+      <Link>XmlLicense\XmlLicense.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\xmllicense\XmlLicenseBuilder.cs">
+      <Link>XmlLicense\XmlLicenseBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Babel.Licensing\XmlLicense\XmlLicenseBuilderProvider.cs">
+      <Link>XmlLicense\XmlLicenseBuilderProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\xmllicense\XmlLicenseManager.cs">
+      <Link>XmlLicense\XmlLicenseManager.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\xmllicense\XmlLicenseParser.cs">
+      <Link>XmlLicense\XmlLicenseParser.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\xmllicense\XmlRestriction.cs">
+      <Link>XmlLicense\XmlRestriction.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\xmllicense\XmlTransform.cs">
+      <Link>XmlLicense\XmlTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\xmllicense\XmlTrialRestriction.cs">
+      <Link>XmlLicense\XmlTrialRestriction.cs</Link>
+    </Compile>
+    <Compile Include="..\babel.licensing\xmllicense\XmlUsageRestriction.cs">
+      <Link>XmlLicense\XmlUsageRestriction.cs</Link>
+    </Compile>
+    <Compile Include="LicenseProviderAttribute.cs" />
+    <Compile Include="IO\IsolatedFileDate.cs" />
+    <Compile Include="Platform\ApplicationInstances.cs" />
+    <Compile Include="Platform\PlatformServices.cs" />
+    <Compile Include="Platform\SystemLicenseContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Crypto\Crypto.Core.csproj">
+      <Project>{38872a5f-e87e-4fad-b109-8eb7b2e6a4a1}</Project>
+      <Name>Crypto.PCL</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
