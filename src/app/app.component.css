@@ -9,6 +9,13 @@ md-select {
     width: 100%;
 }
 
+md-spinner {
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: 5px 10px 0px 0px;
+}
+
 pre {
     white-space: pre-wrap;
     word-wrap: break-word;

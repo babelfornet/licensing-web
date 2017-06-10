@@ -6,6 +6,7 @@
 /out-tsc
 /bin
 /obj
+/Properties/PublishProfiles
 
 # dependencies
 /node_modules
@@ -18,6 +19,7 @@
 *.launch
 .settings/
 *.sublime-workspace
+*.user
 
 # IDE - VSCode
 .vscode/*

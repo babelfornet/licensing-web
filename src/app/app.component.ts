@@ -20,8 +20,10 @@ export class AppComponent {
     selectedFormat: string;
     licenseValidated: boolean;
     licenseValidationError: string;
+    creatingLicense: boolean;
     serialValidated: boolean;
     serialValidationError: string;
+    creatingSerial: boolean;
     expireDate: Date;
     supportExpireDate: Date;
 
@@ -56,9 +58,10 @@ export class AppComponent {
 
     onCreateLicense() {
         this.convertUtcDates(this.license);
-
+        this.creatingLicense = true;
         this.service.createLicense(this.selectedFormat, this.selectedSignature, this.license)
             .subscribe(res => {
+                this.creatingLicense = false;
                 this.license = res;
                 this.licenseValidationError = null;
                 this.licenseValidated = false;
@@ -83,9 +86,10 @@ export class AppComponent {
 
     onCreateSerial() {
         this.convertUtcDates(this.license);
-
+        this.creatingSerial = true;
         this.service.createSerial(this.license)
             .subscribe(res => {
+                this.creatingSerial = false;
                 this.license = res;
                 this.serialValidationError = null;
                 this.serialValidated = false;

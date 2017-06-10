@@ -88,7 +88,10 @@
                 <pre><code #code highlight class="XML">{{license.licenseKey}}</code></pre>
             </div>
             <div class="form-buttons" flex>
-                <button class="form-button" md-raised-button (click)="onCreateLicense()" [disabled]="!licenseForm.valid">Create License</button>
+                <button class="form-button" md-raised-button (click)="onCreateLicense()" [disabled]="!licenseForm.valid">
+                    <md-spinner *ngIf="creatingLicense"></md-spinner>
+                    Create License
+                </button>
                 <div class="tooltip-host" mdTooltip="{{licenseValidationError}}" mdTooltipPosition="above">
                     <button class="form-button" md-raised-button (click)="onValidateLicense()" [disabled]="!license.licenseKey">
                         <md-icon *ngIf="licenseValidated && !licenseValidationError" class="validation-success">check</md-icon>
@@ -116,11 +119,11 @@
                         </md-input-container>
                         <md-datepicker #picker3></md-datepicker>
                     </td>
-                    <td>
+                    <!--<td>
                         <md-input-container class="full-width">
                             <input mdInput type="number" placeholder="Expire Days" name="expireDays" min="0" step="1" [(ngModel)]="license.expireDays">
                         </md-input-container>
-                    </td>
+                    </td>-->
                 </tr>
             </table>
             <md-input-container class="full-width">
@@ -130,7 +133,10 @@
                 <input mdInput placeholder="Serial" name="serialKey" [(ngModel)]="license.serialKey">
             </md-input-container>
             <div class="form-buttons" flex>
-                <button class="form-button" md-raised-button (click)="onCreateSerial()" [disabled]="!serialForm.valid">Create Serial</button>
+                <button class="form-button" md-raised-button (click)="onCreateSerial()" [disabled]="!serialForm.valid">
+                    <md-spinner *ngIf="creatingSerial"></md-spinner>
+                    Create Serial
+                </button>
                 <div class="tooltip-host" mdTooltip="{{serialValidationError}}" mdTooltipPosition="above">
                     <button class="form-button" md-raised-button (click)="onValidateSerial()" [disabled]="!license.serialKey">
                         <md-icon *ngIf="serialValidated && !serialValidationError" class="validation-success">check</md-icon>
