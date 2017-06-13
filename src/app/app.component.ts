@@ -26,6 +26,7 @@ export class AppComponent {
     creatingSerial: boolean;
     expireDate: Date;
     supportExpireDate: Date;
+    editingLicense: boolean;
 
     signatures = [
         { value: 'rsa', viewValue: 'RSA' },
@@ -41,11 +42,9 @@ export class AppComponent {
     constructor(private service: LicenseService) {
         this.selectedTab = 0;
         this.license = new License();
+        this.license.id = '1';
         this.selectedSignature = 'rsa';
         this.selectedFormat = 'xml';
-    }
-
-    createLicense() {
     }
 
     onDownload() {
@@ -63,14 +62,20 @@ export class AppComponent {
             .subscribe(res => {
                 this.creatingLicense = false;
                 this.license = res;
-                this.licenseValidationError = null;
-                this.licenseValidated = false;
-
-                this.code.nativeElement.innerText = res.licenseKey;
-                if (this.selectedFormat === 'xml') {
-                    hljs.highlightBlock(this.code.nativeElement);
-                }
+                this.updateLicenseView();
             });
+    }
+
+    updateLicenseView() {
+        this.licenseValidationError = null;
+        this.licenseValidated = false;
+
+        if (this.code) {
+            this.code.nativeElement.innerText = this.license.licenseKey;
+            if (this.selectedFormat === 'xml') {
+                hljs.highlightBlock(this.code.nativeElement);
+            }
+        }
     }
 
     onValidateLicense() {
@@ -118,6 +123,13 @@ export class AppComponent {
             license.supportExpireDate = this.toUtc(this.supportExpireDate);
         } else {
             license.supportExpireDate = null;
+        }
+    }
+
+    onEditLicense() {
+        this.editingLicense = !this.editingLicense;
+        if (!this.editingLicense) {
+            this.updateLicenseView();
         }
     }
 

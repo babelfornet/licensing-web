@@ -66,26 +66,23 @@
                     </td>
                 </tr>
             </table>
-            <table class="full-width" cellspacing="0">
-                <tr>
-                    <td>
-                        <md-select placeholder="License Signature" [(ngModel)]="selectedSignature" name="signature">
-                            <md-option *ngFor="let sign of signatures" [value]="sign.value">
-                                {{sign.viewValue}}
-                            </md-option>
-                        </md-select>
-                    </td>
-                    <td>
-                        <md-select placeholder="License Format" [(ngModel)]="selectedFormat" name="format">
-                            <md-option *ngFor="let format of formats" [value]="format.value">
-                                {{format.viewValue}}
-                            </md-option>
-                        </md-select>
-                    </td>
-                </tr>
-            </table>
-            <div flex class="license-key">
-                <pre><code #code highlight class="XML">{{license.licenseKey}}</code></pre>
+            <md-select placeholder="License Signature" [(ngModel)]="selectedSignature" name="signature">
+                <md-option *ngFor="let sign of signatures" [value]="sign.value">
+                    {{sign.viewValue}}
+                </md-option>
+            </md-select>
+            <md-select placeholder="License Format" [(ngModel)]="selectedFormat" name="format">
+                <md-option *ngFor="let format of formats" [value]="format.value">
+                    {{format.viewValue}}
+                </md-option>
+            </md-select>
+            <div class="full-width edit-license-container" flex>
+                <button class="edit-license-button" *ngIf="license.licenseKey" md-button (click)="onEditLicense()">
+                    <md-icon *ngIf="!editingLicense">edit</md-icon>
+                    <md-icon *ngIf="editingLicense">save</md-icon>
+                </button>
+                <pre *ngIf="editingLicense"><code><textarea class="edit-license-text" mdInput name="licenseKey" rows="8" [(ngModel)]="license.licenseKey"></textarea></code></pre>
+                <pre *ngIf="!editingLicense"><code *ngIf="!editingLicense" highlight #code class="XML">{{license.licenseKey}}</code></pre>
             </div>
             <div class="form-buttons" flex>
                 <button class="form-button" md-raised-button (click)="onCreateLicense()" [disabled]="!licenseForm.valid">
